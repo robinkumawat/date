@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="date.css">
+    <link rel="stylesheet" href="media.css">
 </head>
 <body>
+    <div id="clock">Clock</div>
     <div id="wrapper">   </div>
         
 
@@ -20,13 +23,16 @@
         let clock=""
         const dt= new Date()
         
-        clock +=" " + getDayName(dt.getDay());
-        clock += ","+dt. getDate();
-        clock +=" / " +  getMonthName((dt.getMonth()+1));
-        clock +=" / " +  dt.getFullYear();
+       
         clock += "  " + dt.getHours();
         clock += " : " +  dt.getMinutes();
-        clock += ":" +appendZero (dt.getSeconds());
+        clock += ":" +appendZero (dt.getSeconds()); 
+
+        clock +="    " + getDayName(dt.getDay());
+        clock += "    /  "+dt. getDate();
+        clock +=" / " +  getMonthName((dt.getMonth()+1));
+        clock +=" / " +  dt.getFullYear();
+       
         document.querySelector("#wrapper").innerHTML=clock;
 
     },1000)
